@@ -61,5 +61,22 @@ goto tomcat home directory and Add below users to conf/tomcat-user.xml file
 	<user username="deployer" password="deployer" roles="manager-script"/>
 	<user username="tomcat" password="s3cret" roles="manager-gui"/>
    ```
+   
+   -------deo code----
+   apt-get install tomcat8
+apt-get install tomcat-docs tomcat8-examples tomcat8-admin
+
+
+systemctl start tomcat8
+
+vi /var/lib/tomcat8/tomcat-users.xml
+<role rolename="manager-gui"/>
+	<role rolename="manager-script"/>
+	<role rolename="manager-jmx"/>
+	<role rolename="manager-status"/>
+<role rolename="admin-gui"/>
+	<user username="admin" password="admin" roles="manager-gui, admin-gui, manager-script, manager-jmx, manager-status"/>
+	
+	-----deo code-----
 1. Restart serivce and try to login to tomcat application from the browser. This time it should be Successful
 
